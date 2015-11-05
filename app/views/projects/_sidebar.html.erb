@@ -1,0 +1,22 @@
+<div class = "container-fluid">
+	<div class = "row">
+		<div class = "col-sm-3 col-md-2 sidebar">
+			<table class="table table-hover">
+        	<thead>
+          <tr>
+            <th data-field="name">Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% projects.each do |project| %>
+          <tr>
+            <td width="200"><%= project.name %></td>
+           </tr>
+            <% end %>
+          </tbody>
+        </table>
+          <%= link_to "New Project", {action: "new"}, class: "btn btn-md btn-success" %>
+		</div>
+	</div>
+</div>
