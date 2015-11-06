@@ -5,11 +5,18 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
 
+
   resources :users
   resources :projects
-  resources :panels
+
+    resources :panels do
+    collection do
+      get :fault
+    end
+  end
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

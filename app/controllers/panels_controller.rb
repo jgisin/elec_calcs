@@ -1,7 +1,7 @@
 class PanelsController < ApplicationController
+  respond_to :js
   before_action :get_project
   before_action :index_project
-  respond_to :html, :js
 
 def index
 	@panels = @project.panels
@@ -15,18 +15,29 @@ def new
 end
 
 def create
+	@panels = Panel.where(:project_id => @project.id)
     @panel = Panel.new(panel_params)
     @panel.save
     @panel_count = Panel.count
 end
 	
-def results
-  respond_to do |format|
-    format.html { render partial: 'results' }
-  end
+def fault
+	@panels = @project.panels
 end
 
+  def edit
+  	@panel = Panel.find(params[:id])
+  	@panel_names = Panel.where(:project_id => @panel.project_id).pluck(:panel_name)
+    @panel_names.insert(0, "Transformer")
+    #For Position in Form
+    @panel_count = Panel.count
+  end
 
+  def update
+    @panels = Panel.where(:project_id => @project.id)
+  	@panel = Panel.find(params[:id])
+    @panel.update(panel_params)
+  end
 
 
     def panel_params
