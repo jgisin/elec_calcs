@@ -7,6 +7,9 @@ def index
 	@panels = @project.panels
 end
 
+def show
+end
+
 def new
     @panel = Panel.new({:project_id => @project.id})
     @panel_count = Panel.count + 1
@@ -22,7 +25,7 @@ def create
 end
 	
 def fault
-	@panels = @project.panels
+@panels = Panel.where(:project_id => @project.id)
 end
 
   def edit
@@ -39,6 +42,21 @@ end
     @panel.update(panel_params)
   end
 
+  def delete
+  end
+  # DELETE /panels/1
+  # DELETE /panels/1.json
+  def destroy
+    @panel = Panel.find(params[:id])
+    Panel.where(:fed_from => @panel.panel_name).destroy(Panel.where(:fed_from => @panel.panel_name).pluck(:id))
+    flash[:notice] = "Panel '#{@panel.panel_name}' has been destroyed successfully"
+    if @panel.destroy
+    respond_to do |format|
+      format.html { redirect_to '/dashboard/index', status: 303 }
+      format.json { head :no_content }
+    end
+  end
+  end
 
     def panel_params
       params.require(:panel).permit(:wire_length, :init_fault, :runs, :voltage, :c_value, :panel_name,
