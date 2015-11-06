@@ -1,0 +1,76 @@
+<%= form_for @panel, remote: true do |f| %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+  <div class="form-group">
+    <%= f.label :panel_name %><br>
+    <%= f.text_field :panel_name, :size => 40 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :wire_length %><br>
+    <%= f.text_field :wire_length %>
+  </div>
+  <div class = "form-group" >
+    <%= f.label :fed_from %><br>
+    <%= f.select :fed_from, @panel_names %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :runs %><br>
+    <%= f.text_field :runs %>
+  </div>
+  <div class="form-group">
+    <%= f.label :voltage %><br>
+    <%= f.select :voltage, [208, 240, 480], {}, {class: "form-control"} %>
+  </div>
+    <div class="form-group">
+    <%= f.label :wire_size %><br>
+    <%= f.select :wire_size, ["14", "12", "10", "8", "6", "4", "3", "2", "1", 
+      "1/0", "2/0", "3/0", "4/0", "250", "300", "350", "400", "500", "600", 
+      "750", "1,000"], {}, {class: "form-control"} %>
+  </div>
+  </div>
+</div>
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+            <%= f.label :wire_type, "Copper", :value => 1 %><br>
+           <%= f.radio_button :wire_type, 1,  {class: "form-control"} %>
+            <%= f.label :wire_type, "Aluminum", :value => 2 %><br>
+            <%= f.radio_button :wire_type, 2, {class: "form-control"} %>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+            <%= f.label :conduit_type, "Magnetic", :value => 1 %><br>
+           <%= f.radio_button :conduit_type, 1,  {class: "form-control"} %>
+            <%= f.label :conduit_type, "Non-Magnetic", :value => 2 %><br>
+            <%= f.radio_button :conduit_type, 2, {class: "form-control"} %>
+      </div>
+  </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+            <%= f.label :run_type, "Three Single Conductors", :value => 1 %><br>
+           <%= f.radio_button :run_type, 1,  {class: "form-control"} %>
+            <%= f.label :run_type, "Three Conductor Cable", :value => 2 %><br>
+            <%= f.radio_button :run_type, 2, {class: "form-control"} %>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+        <div class="form-group">
+            <%= f.label :position %><br>
+           <%= f.select :position, 1..@panel_count, {}, {class: "form-control"} %>
+        </div>
+        <div class="form-group">
+          <%= f.hidden_field :project_id, :value => @panel.project_id %>
+          <%= f.submit 'Submit', {:class => 'btn btn-md btn-success'} %>       
+          <%= link_to "Back to Dashboard", {controller: "dashboard", action: "index" }, class: "btn btn-md btn-default" %>
+        </div>
+
+    </div>
+  </div>
+</div>
+<% end %>

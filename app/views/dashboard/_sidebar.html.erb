@@ -1,0 +1,11 @@
+    <div class = "col-sm-3 col-md-2 sidebar">
+			<ul class = "nav nav-sidebar" id = "sidebar">
+        <li class="active"><a href="#">Projects<span class="sr-only">(current)</span></a></li>
+          <% @projects.each do |project| %>
+          <li><%= link_to project.name, { controller: "projects", action: "show", id: project.id}, remote: true %>
+          </li>
+          <% end %>
+          <%= link_to "New Project", new_project_path, class: "btn btn-md btn-default", remote: true   %> 
+      </ul>
+
+		</div>

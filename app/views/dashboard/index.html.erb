@@ -1,1 +1,16 @@
-<%= render partial: "projects/sidebar", locals: {:projects => Project.all} %>
+<% if !flash[:notice].blank? %>
+    <div class="alert alert-success fade in">
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+
+
+<div class = "container-fluid">
+	<div class = "row">
+		<div id = "sidebar">
+ 			<%= render partial: "dashboard/sidebar", locals: {:projects => @projects } %>
+ 		</div>
+
+		<div class = "col-sm-9" id="project-form" style="display:none;"></div>
+	</div>
+</div>

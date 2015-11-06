@@ -1,0 +1,26 @@
+ <div class="row">
+    <div class="col-sm-7">
+      <h2>Results</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Panel Name</th>
+            <th>F Value</th>
+            <th>M Value</th>
+            <th>Final Value</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @panels.each do |panel| %>
+          <tr>
+            <td><%= panel.panel_name %></td>
+            <td><%= number_with_precision(panel.f_value, precision: 2) %></td>
+            <td><%= number_with_precision(panel.m_value, precision: 2) %></td>
+            <td><%= number_with_precision(panel.final_value, precision: 2) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
