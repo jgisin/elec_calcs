@@ -5,6 +5,9 @@ class PanelsController < ApplicationController
 
 def index
 	@panels = @project.panels
+  @panels.each do |panel|
+    panel.save
+  end
 end
 
 def show

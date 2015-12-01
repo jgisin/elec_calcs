@@ -154,7 +154,7 @@
     end
     when "1"
      if wire_type == 1 && conduit_type == 1 && runs_type == 1
-      return 7263
+      return 7293
     elsif wire_type == 1 && conduit_type == 1 && runs_type == 2
       return 7454
     elsif wire_type == 1 && conduit_type == 2 && runs_type == 1

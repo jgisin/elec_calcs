@@ -11,7 +11,19 @@
  			<%= render partial: "dashboard/sidebar", locals: {:projects => @projects } %>
  		</div>
 
-		<div class = "col-sm-9" id="project-form" style="display:none;">
+		<div class = "col-sm-9">
+			<div class = "row" id = "dashboard">
+				<% @projects.each do |project| %>
+				<div class = "clearfix col-sm-5 project-dash">
+					<h2><%= project.name %></h2>
+					<%= link_to "Total Panels: #{project.panels.length}", {controller: 'panels', action: 'index', project_id: project.id}, class: "btn btn-md btn-default", remote: true   %>
+					<br /><br />
+					<!--Type of Project: <%= project.project_type %> -->
+				</div>
+				<% end %>
+			</div>
+			<div id = "project-form" style="display:none;">
+			</div>
 		</div>
 	</div>
 </div>

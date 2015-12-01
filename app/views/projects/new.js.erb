@@ -1,4 +1,5 @@
 $(document).ready(function(){
-$('#project-form').html("<%= j (render 'form') %>");
-$('#project-form').show();
+	$('.project-dash').hide();
+	$('#project-form').html("<%= j (render 'form') %>");
+	$('#project-form').show();
 });

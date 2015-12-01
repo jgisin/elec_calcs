@@ -20,10 +20,8 @@ validates_presence_of :run_type
 def set_fault
 	if self.fed_from == "Transformer"
 		self.init_fault = Project.find_by_id(self.project_id).init_fault
-	elsif self.final_value != nil
-		self.init_fault = Panel.where(panel_name: self.fed_from).final_value
 	else
-		self.init_fault = 0
+		self.init_fault = Panel.where(panel_name: self.fed_from).first.final_value
 	end
 end
 
