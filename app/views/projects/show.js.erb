@@ -1,2 +1,5 @@
-$('#project-form').html("<%= j (render 'details') %>");
-$('#project-form').slideDown(600);
+$(document).ready(function(){
+
+	$('#project-form').html("<%= j (render 'details') %>");
+	$('#project-form').show();
+});

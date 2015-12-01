@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 20151130223853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cvalues", force: :cascade do |t|
+    t.string   "wire_size"
+    t.integer  "wire_type"
+    t.integer  "conduit_type"
+    t.integer  "runs_type"
+    t.integer  "c_value"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "panels", force: :cascade do |t|
     t.string  "panel_name"
@@ -38,7 +48,7 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "projects", force: :cascade do |t|
     t.string  "name"
     t.string  "description"
-    t.integer "project_type"
+    t.string  "project_type"
     t.integer "position"
     t.float   "init_fault"
     t.integer "user_id"

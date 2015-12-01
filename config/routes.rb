@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   match '/panels/fault', :to => 'panels#fault', :via => [:get, :post]
   resources :panels
-  delete 'panels/:id' => 'dashboard#index', :via => :get
   resources :users
   resources :projects
 

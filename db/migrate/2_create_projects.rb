@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
     	t.string :name
     	t.string :description
-    	t.integer :project_type
+    	t.string :project_type
     	t.integer :position
     	t.float :init_fault
         t.integer :user_id

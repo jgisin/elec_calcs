@@ -1,6 +1,5 @@
 class Project < ActiveRecord::Base
 
-#attr_accessor :name
 belongs_to :user	
 has_many :panels, :dependent => :destroy
 
