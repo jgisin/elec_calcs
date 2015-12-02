@@ -11,59 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130223853) do
+ActiveRecord::Schema.define(version: 20151130223327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cvalues", force: :cascade do |t|
-    t.string   "wire_size"
-    t.integer  "wire_type"
-    t.integer  "conduit_type"
-    t.integer  "runs_type"
-    t.integer  "c_value"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "panels", force: :cascade do |t|
-    t.string  "panel_name"
-    t.integer "position"
-    t.float   "wire_length"
-    t.float   "init_fault"
-    t.string  "fed_from"
-    t.float   "runs"
-    t.float   "voltage"
-    t.string  "wire_size"
-    t.integer "wire_type"
-    t.integer "conduit_type"
-    t.integer "run_type"
-    t.float   "c_value"
-    t.float   "f_value"
-    t.float   "m_value"
-    t.float   "final_value"
-    t.integer "project_id"
-  end
-
-  create_table "projects", force: :cascade do |t|
-    t.string  "name"
-    t.string  "description"
-    t.string  "project_type"
-    t.integer "position"
-    t.float   "init_fault"
-    t.integer "user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "user_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_foreign_key "panels", "projects"
-  add_foreign_key "projects", "users"
 end
