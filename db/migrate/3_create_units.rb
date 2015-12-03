@@ -16,6 +16,8 @@ class CreateUnits < ActiveRecord::Migration
         t.integer :heating, default: 0
         t.integer :cooling, default: 0
         t.integer :other_load, default: 0
+        t.integer :demand
+        t.integer :lighting
     	t.integer :total_unit
     	t.integer :voltage #per unit or per meter bank
 

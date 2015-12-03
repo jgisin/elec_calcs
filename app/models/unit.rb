@@ -1,6 +1,6 @@
 class Unit < ActiveRecord::Base
 belongs_to :project
-before_save :set_small_app, :set_hvac, :unit_load
+before_save :set_small_app, :set_hvac, :set_lighting, :demand_load, :total
 
 scope :sorted, lambda { order("units.sqr_ftg ASC")}
 
@@ -12,8 +12,19 @@ scope :sorted, lambda { order("units.sqr_ftg ASC")}
 		self.hvac = self.heating + self.cooling + self.other_load
 	end
 
-	def unit_load
-		self.total_unit = (self.sqr_ftg * 3) + self.small_app + self.washer
+	def set_lighting
+		self.lighting = (self.sqr_ftg * 3) + self.small_app + self.washer
 	end
+
+	def total
+		self.total_unit = self.demand + self.microwave + self.dishwasher +
+		self.disposal + self.dryer + self.hvac
+	end
+
+	def demand_load
+			self.demand = 3000 + ((self.lighting - 3000)* 0.35)
+	end
+
+
 
 end

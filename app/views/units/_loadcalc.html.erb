@@ -2,27 +2,32 @@
     <div class="col-sm-7">
       <div class = "page-header"><h2>Fault Current Values</h2></div>
 <%= link_to "View Units", {controller: 'units', action: 'index', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %> </p>
-      <table class="table table-hover" id = "panel-table">
-        <thead>
-          <tr>
-            <th>Unit Name</th>
-            <th>General Lighting Load</th>
-            <th>Demand Factor</th>
-            <th>Net Computed Load</th>
-          </tr>
-        </thead>
+  
+    <% @units.each do |unit| %>
+    <div id = "unit-table">
+      <h4><%= "Computed Load for Unit #{unit.unit_name}:" %></h4>
 
-        <tbody>
-          <% @units.each do |unit| %>
-          <tr>
-            <td><%= unit.unit_name %></td>
-            <td><%= "#{unit.sqr_ftg} @ 3 Volt-Amperes per Sq. Ft. + Small Appliance Load + Washer Load:
-            Total Computed Load = #{unit.total_unit}" %></td>
-            <td><%=  %></td>
-            <td><%= %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <p>  <%= "Area of the largest dwelling unit is #{number_with_delimiter(number_with_precision(unit.sqr_ftg, precision: 0), :delimiter => ',')} sq ft." %><br /></p>
+      <p> <b> General Lighing Load: </b><br />
+           <%= "#{unit.sqr_ftg} sq ft. @ 3 Volt-Amperes per Square Foot = #{number_with_delimiter(number_with_precision(unit.sqr_ftg * 3, precision: 0), :delimiter => ',')} Volt-Amperes" %> <br />
+           <%= "Small Appliance Load = #{number_with_delimiter(unit.small_app, :delimiter => ',')} Volt-Amperes" %> <br /> 
+           <%= "Washer = #{number_with_delimiter(unit.washer, :delimiter => ',')} Volt-Amperes" %> <br />
+           <%= "Total Computed Load = #{number_with_delimiter(unit.lighting, :delimiter => ',')} Volt-Amperes" %> </p>
+
+      <p>  <b>Application of Demand Factor: </b><br />
+           <%= "3,000 Volt-Amperes @ 100% = #{unit.lighting > 3000 ? "3,000" : unit.lighting} Volt-Amperes" %><br />
+           <%= "#{number_with_delimiter((unit.lighting - 3000) > 0 ? (unit.lighting - 3000) : 0, :delimiter => ',')} Volt-Amperes @ 35% = 
+           #{number_with_delimiter(number_with_precision((unit.lighting - 3000) > 0 ? ((unit.lighting - 3000) * 0.35) : 0, precision: 0), :delimiter => ',')} Volt-Amperes" %><br />
+           <%= "Net Computed Load = #{number_with_delimiter(unit.demand, :delimiter => ',')} Volt-Amperes" %></p>
+      <p>   <%= "Microwave Load = #{number_with_delimiter(unit.microwave, :delimiter => ',')} Volt-Amperes" %><br />
+            <%= "Dishwasher Load = #{number_with_delimiter(unit.dishwasher, :delimiter => ',')} Volt-Amperes" %><br />
+            <%= "Disposer Load = #{number_with_delimiter(unit.disposal, :delimiter => ',')} Volt-Amperes" %><br />
+            <%= "Clothes Dryer Load = #{number_with_delimiter(unit.dryer, :delimiter => ',')} Volt-Amperes" %><br />
+            <%= "HVAC Load = #{number_with_delimiter(unit.hvac, :delimiter => ',')} Volt-Amperes" %></p>
+      <p>   <%= "Net Computed Load for the Largest Dwelling Unit =" %> <b> <%= " #{number_with_delimiter(unit.total_unit, :delimiter => ',')} Volt-Amperes" %> </b><br />
+            <%= "#{number_with_delimiter(unit.total_unit, :delimiter => ',')} / #{unit.voltage} Volts = " %> <b> <%= "#{number_with_precision((unit.total_unit.to_f / 208.to_f), precision: 0)} Amperes" %>
+           <hr />
+           <% end %>
+    </div>
     </div>
   </div>

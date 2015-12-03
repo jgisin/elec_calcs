@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 20151130223853) do
     t.integer  "heating",    default: 0
     t.integer  "cooling",    default: 0
     t.integer  "other_load", default: 0
+    t.integer  "demand"
+    t.integer  "lighting"
     t.integer  "total_unit"
     t.integer  "voltage"
     t.integer  "project_id"
