@@ -1,5 +1,5 @@
 class Panel < ActiveRecord::Base
-#attr_accessor :init_fault
+
 
 before_save :set_fault, :set_c_val, :calc_final
 belongs_to :project

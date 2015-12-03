@@ -4,7 +4,7 @@ class PanelsController < ApplicationController
   before_action :index_project
 
 def index
-	@panels = @project.panels
+	@panels = @project.panels.sorted
   @panels.each do |panel|
     panel.save
   end

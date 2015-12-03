@@ -1,0 +1,39 @@
+<%= form_for @unit, remote: true do |f| %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+  <div class="form-group">
+    <%= f.label :unit_name %><br>
+    <%= f.text_field :unit_name%>
+  </div>
+  <div class="form-group">
+    <%= f.label :bedrooms %><br>
+    <%= f.text_field :bedrooms%>
+  </div>
+  <div class = "form-group" >
+    <%= f.label :sqr_ftg %><br>
+    <%= f.text_field :sqr_ftg%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :voltage %><br>
+    <%= f.select :voltage, [208, 240], {}, {class: "form-control"} %>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+
+        <div class="form-group">
+          <%= f.hidden_field :project_id, :value => @unit.project_id %>
+          <%= f.button :Submit, name: "project_id", value: @unit.project_id, :class => 'btn btn-md btn-success'  %>       
+          <%= link_to "Cancel", {controller: 'units', action: 'index', project_id: @unit.project_id }, class: "btn btn-md btn-default", remote: true   %>
+          <%= link_to 'Destroy', @unit, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-md btn-danger" %>
+        </div>
+
+    </div>
+  </div>
+</div>
+<% end %>

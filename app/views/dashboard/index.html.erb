@@ -16,7 +16,9 @@
 				<% @projects.each do |project| %>
 				<div class = "clearfix col-sm-5 project-dash">
 					<h2><%= project.name %></h2>
+					<span id = "category"> <%= "#{project.project_type}" %></span><br />
 					<%= link_to "Total Panels: #{project.panels.length}", {controller: 'panels', action: 'index', project_id: project.id}, class: "btn btn-md btn-default", remote: true   %>
+					<%= link_to "Units: #{project.units.length}", {controller: 'units', action: 'index', project_id: project.id}, class: "btn btn-md btn-default", remote: true   %>
 					<br /><br />
 					<!--Type of Project: <%= project.project_type %> -->
 				</div>

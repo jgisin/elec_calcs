@@ -9,5 +9,6 @@ class CreateProjects < ActiveRecord::Migration
         t.integer :user_id
     end
         add_foreign_key :panels, :projects
+        add_foreign_key :units, :projects
   end
 end

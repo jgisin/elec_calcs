@@ -6,9 +6,13 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   match '/panels/fault', :to => 'panels#fault', :via => [:get, :post]
+  match '/units/appliance', :to => 'units#appliance', :via => [:get, :post]
+  match '/units/hvac', :to => 'units#hvac', :via => [:get, :post]
+  match '/units/load', :to => 'units#load', :via => [:get, :post]
   resources :panels
   resources :users
   resources :projects
+  resources :units
 
 
 

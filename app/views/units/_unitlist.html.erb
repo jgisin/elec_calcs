@@ -1,0 +1,44 @@
+<div class="container">
+ </div>
+<%= link_to "Back to Project", project_path(@project), class: "btn btn-md btn-default", remote: true %>
+ <%= link_to "New Unit", {controller: 'units', action: 'new', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %>
+  <%= link_to "Load Calculations", {controller: 'units', action: 'load', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %>
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-11" id = "unit-table">
+      <h2>Unit Details</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Unit Name</th>
+            <th>Bedrooms</th>
+            <th>Square Footage</th>
+            <th>Small Appliance Load</th>
+            <th>Unit Voltage</th>
+            <th>Major Appliances</th>
+            <th>HVAC</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @units.each do |unit| %>
+          <tr>
+            <td><%= link_to unit.unit_name, edit_unit_path(unit), class: "btn btn-md btn-default", remote: true %></td>
+            <td><%= unit.bedrooms %></td>
+            <td><%= unit.sqr_ftg %></td>
+            <td style = "width: 150px;"><%= "#{unit.small_app}W" %></td>
+            <td><%= "#{unit.voltage}V" %></td>
+            <td><%= link_to "Appliances", {controller: 'units', action: 'appliance', id: unit.id, project_id: @project.id}, class: "btn btn-md btn-default", remote: true %></td>
+            <td><%= link_to "HVAC: #{unit.hvac}W", {controller: 'units', action: 'hvac', id: unit.id, project_id: @project.id}, class: "btn btn-md btn-default", remote: true %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+      <% if !flash[:notice].blank? %>
+    <div class="alert alert-danger fade in">
+      <%= flash[:notice] %>
+    </div>
+    <% end %>
+</div>

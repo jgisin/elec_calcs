@@ -1,0 +1,48 @@
+<%= form_for @unit, remote: true do |f| %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+
+  <div class="form-group">
+    <%= f.label :washer %><br>
+    <%= f.text_field :washer%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :microwave %><br>
+    <%= f.text_field :microwave%>
+  </div>
+
+  <div class = "form-group" >
+    <%= f.label :dishwasher %><br>
+    <%= f.text_field :dishwasher %>
+  </div>
+
+  <div class = "form-group" >
+    <%= f.label :disposal %><br>
+    <%= f.text_field :disposal %>
+  </div>
+
+  <div class = "form-group" >
+    <%= f.label :dryer %><br>
+    <%= f.text_field :dryer %>
+  </div>
+
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+
+        <div class="form-group">
+          <%= f.hidden_field :project_id, :value => @unit.project_id %>
+          <%= f.button :Submit, name: "project_id", value: @unit.project_id, :class => 'btn btn-md btn-success'  %>       
+          <%= link_to "Cancel", {controller: 'units', action: 'index', project_id: @unit.project_id }, class: "btn btn-md btn-default", remote: true   %>
+        </div>
+
+    </div>
+  </div>
+</div>
+<% end %>
