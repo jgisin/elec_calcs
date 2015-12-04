@@ -22,7 +22,7 @@ scope :sorted, lambda { order("units.sqr_ftg ASC")}
 	end
 
 	def demand_load
-			self.demand = 3000 + ((self.lighting - 3000)* 0.35)
+		self.demand = 3000 + ((self.lighting - 3000)* 0.35)
 	end
 
 
