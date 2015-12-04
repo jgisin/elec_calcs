@@ -10,5 +10,6 @@ class CreateProjects < ActiveRecord::Migration
     end
         add_foreign_key :panels, :projects
         add_foreign_key :units, :projects
+        add_foreign_key :meterbanks, :projects
   end
 end

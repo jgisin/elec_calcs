@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
 belongs_to :user	
 has_many :panels, :dependent => :destroy
 has_many :units, :dependent => :destroy
+has_many :meterbanks, :dependent => :destroy
 
 scope :sorted, lambda { order("projects.position ASC")}
 

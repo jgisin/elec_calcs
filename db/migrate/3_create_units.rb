@@ -3,7 +3,6 @@ class CreateUnits < ActiveRecord::Migration
     create_table :units do |t|
 
         t.string :unit_name
-    	t.integer :unit_meter #how many units in meter bank
     	t.integer :bedrooms #how many
     	t.float :sqr_ftg #for use in max sqr ftg calcs
     	t.integer :small_app #for small appliance load after calc
