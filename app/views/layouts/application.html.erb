@@ -22,7 +22,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if !session[:user_id].nil? %>
             <li><a href="/">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><%= link_to "Settings", edit_user_path(session[:user_id]) %></li>
             <li> <p class="navbar-text"><%= session[:user_name].upcase %> &nbsp;
            <%= link_to "Logout", {controller: "users", action: "logout"} %>
                       <% else %>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  respond_to :html
 
   def index	
   end
@@ -13,8 +14,14 @@ class UsersController < ApplicationController
     redirect_to(action: 'index')  
   end
 
-  def show
 
+  def edit
+    @user = User.find(session[:user_id])  
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    @user.update(user_params)
   end
 
 
@@ -23,14 +30,13 @@ class UsersController < ApplicationController
   end
 
   def create
-	  @user = User.new(unit_params)
+	  @user = User.new(user_params)
 	 if  @user.save!
 	 	session[:user_id] = @user.id
 	 	session[:user_name] = @user.user_name
-	 	session[:logged_in] = true
 	 	redirect_to(:controller => 'dashboard', :action => 'index')
 	 else
-	 	redirect_to(:controller => 'users', :action => 'new')
+	 	render 'form'
 	 end
   end
 
@@ -53,7 +59,7 @@ class UsersController < ApplicationController
 
   
 
-	def unit_params
+	def user_params
       params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email)
    	end
 
