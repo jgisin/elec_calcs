@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 20151204182647) do
     t.string   "bus_name"
     t.integer  "unit_count"
     t.string   "largest_unit"
+    t.float    "dryer_demand"
+    t.float    "load_demand"
+    t.integer  "lighting"
+    t.integer  "appliance"
+    t.integer  "dryer_total"
+    t.integer  "hvac_total"
+    t.integer  "total_load"
     t.integer  "project_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

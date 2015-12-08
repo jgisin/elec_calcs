@@ -1,0 +1,5 @@
+$(document).ready(function(){
+	$('.project-dash').hide();
+	$('#project-form').html("<%= j (render 'meterlist') %>");
+	$('#project-form').show();
+});

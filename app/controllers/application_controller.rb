@@ -10,8 +10,22 @@ def get_project
 end
 
 def index_project
-	@projects = Project.all
+	@projects = Project.where(:user_id => session[:user_id])
 end
+
+private 
+	def confirm_logged_in
+		unless session[:user_id]
+		  flash[:notice] = "Please log in."
+		  redirect_to(:controller => 'users', :action => 'index')
+		  return false
+		else
+		  return true
+		end
+	end
+
+
+
 
 
 end

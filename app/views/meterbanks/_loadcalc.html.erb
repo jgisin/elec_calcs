@@ -1,0 +1,47 @@
+ <div class="row">
+    <div class="col-sm-7">
+      <div class = "page-header"><h2>Residential Load Calculations:</h2></div>
+<%= link_to "View Meter Banks", {controller: 'meterbanks', action: 'index', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %> </p>
+  
+    <% @meterbanks.each do |meter| %>
+    <div id = "meter-table">
+      <h4><%= "Computed Load for #{meter.unit_count}-Unit Meter Bank:" %></h4>
+
+      <p>  <b> Computed Lighting and Small Appliance Load: </b><br/>
+        <%= "Lighting and Small Appliance load for #{meter.unit_count} Units: #{number_with_delimiter(number_with_precision(meter.unit.lighting * meter.unit_count, precision: 0), :delimiter => ',')} Volt-Amperes" %><br /></p>
+
+
+      <p> <b> Application of Demand Factor: </b><br />
+        <%= "3,000 Volt-Amperes @ 100% = 3,000 Volt-Amperes" %><br />
+        <%= "From 3001 to #{(meter.unit.lighting * meter.unit_count) < 120000 ? number_with_delimiter((meter.unit.lighting * meter.unit_count), :delimiter => ',') : '120,000'} @ 35% = #{number_with_delimiter(meter.demand_total - 3000, :delimiter => ',')} Volt-Amperes" %><br />
+        <%= "Net Computed Load (#{meter.unit_count} Dwelling Units) = #{number_with_delimiter(meter.demand_total, :delimiter => ',')} Volt-Amperes" %><br />
+
+
+
+       <p> <b>Computed Appliance Load:</b><br />
+       <%= "Microwave Load for #{meter.unit_count} Units = #{number_with_delimiter(meter.unit_count * meter.unit.microwave, :delimiter => ',')} Volt-Amperes" %><br />
+        <%= "Dishwasher Load for #{meter.unit_count} Units = #{number_with_delimiter(meter.unit_count * meter.unit.dishwasher, :delimiter => ',')} Volt-Amperes" %><br />
+        <%= "Disposal Load for #{meter.unit_count} Units = #{number_with_delimiter(meter.unit_count * meter.unit.disposal, :delimiter => ',')} Volt-Amperes" %><br />
+        <%= "Demand Load for Appliances per NEC 220-53:" %><br />
+        <%= "#{number_with_delimiter((meter.unit.dishwasher + meter.unit.microwave + meter.unit.disposal) * meter.unit_count, :delimiter => ',')} Volt-Amperes @ 75% = #{number_with_delimiter(meter.appliance_total, :delimiter => ',')} Volt-Amperes" %></p>
+
+
+        <p><b>Computed Dryer Load:</b><br />
+        <%= "Clothes Dryer Load for #{meter.unit_count} Units = #{number_with_delimiter(meter.unit_count * meter.unit.dryer, :delimiter => ',')} Volt-Amperes" %><br />
+        <%= "Demand Load for Dryers per NEC 220-54:" %><br />
+        <%= "#{number_with_delimiter((meter.unit.dryer * meter.unit_count), :delimiter => ',')} Volt-Amperes at #{DryerDemand.where(:count => meter.unit_count).first.demand * 100}% = #{number_with_delimiter(meter.dryer_total, :delimiter => ',')} Volt-Amperes" %></p>
+
+
+        <p><%= "HVAC Loads for #{meter.unit_count} Units @ 100% = #{number_with_delimiter(meter.hvac_total, :delimiter => ',')} Volt-Amperes" %></p>
+
+        <p><%= "Total Computed Load (#{meter.unit_count} Dwelling Units) = " %> <b><%= "#{number_with_delimiter(meter.total_load, :delimiter => ',')} Volt-Amperes" %></b></p>
+
+        <p><%= "Total Load at #{meter.unit_count}-Unit Meter Bank:" %><br />
+          <%= "#{number_with_delimiter(meter.total_load, :delimiter => ',')} Volt-Amperes / (#{meter.unit.voltage}V * 1.732) = " %><b><%= "#{number_with_precision(meter.total_load / (meter.unit.voltage * 1.732), precision: 0)} Amperes" %></b></p>
+
+
+           <hr />
+           <% end %>
+    </div>
+    </div>
+  </div>

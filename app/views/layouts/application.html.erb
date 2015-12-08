@@ -22,7 +22,12 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Login</a></li>
+            <li><% if !session[:user_id].nil? %>
+                        <p class="navbar-text"><%= session[:user_name].upcase %> &nbsp;
+           <%= link_to "Logout", {controller: "users", action: "logout"} %>
+                      <% else %>
+           <%= link_to "Login", {controller: "users", action: "index"} %>
+         <%end%></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">

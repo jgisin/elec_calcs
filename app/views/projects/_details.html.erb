@@ -32,7 +32,8 @@
 		
 			<p><div class = "col-sm-2">
 			<%= link_to "View Panels", {controller: 'panels', action: 'index', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %> </p>
-			<%= link_to "View Units", {controller: 'units', action: 'index', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %> </p>
+			<p><%= link_to "View Units", {controller: 'units', action: 'index', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %> </p>
+			<p><%= link_to "View Meter Banks", {controller: 'meterbanks', action: 'index', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %>
 
 			<p><%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-md btn-default", remote: true   %></p>
 			<p>

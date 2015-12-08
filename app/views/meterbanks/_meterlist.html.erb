@@ -1,0 +1,36 @@
+<div class="container">
+ </div>
+<%= link_to "Back to Project", project_path(@project), class: "btn btn-md btn-default", remote: true %>
+ <%= link_to "New Meter Bank", {controller: 'meterbanks', action: 'new', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %>
+  <%= link_to "Load Calculations - Conventional Method", {controller: 'meterbanks', action: 'load', project_id: @project.id}, class: "btn btn-md btn-default", remote: true   %>
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-11" id = "meter-table">
+      <h2>Meter Bank Details</h2>
+      <table class="table table-hover" style = "width: 500px;">
+        <thead>
+          <tr>
+            <th>Meter Bank Name</th>
+            <th>Number of Units</th>
+            <th>Name of Largest Unit</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @meterbanks.each do |meter| %>
+          <tr>
+            <td><%= link_to meter.bus_name, edit_meterbank_path(meter), class: "btn btn-md btn-default", remote: true %></td>
+            <td><%= meter.unit_count %></td>
+            <td><%= meter.largest_unit %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+      <% if !flash[:notice].blank? %>
+    <div class="alert alert-danger fade in">
+      <%= flash[:notice] %>
+    </div>
+    <% end %>
+</div>

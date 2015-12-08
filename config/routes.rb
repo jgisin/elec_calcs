@@ -4,15 +4,19 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
-
+  
+  match '/users/logout', :to => 'users#logout', :via => [:get, :post]
+  get '/logout' => 'session#destroy'
   match '/panels/fault', :to => 'panels#fault', :via => [:get, :post]
   match '/units/appliance', :to => 'units#appliance', :via => [:get, :post]
   match '/units/hvac', :to => 'units#hvac', :via => [:get, :post]
   match '/units/load', :to => 'units#load', :via => [:get, :post]
+  match '/meterbanks/load', :to => 'meterbanks#load', :via => [:get, :post]
   resources :panels
   resources :users
   resources :projects
   resources :units
+  resources :meterbanks
 
 
 

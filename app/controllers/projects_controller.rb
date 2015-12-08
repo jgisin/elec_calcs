@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
 
   def create
     #Param for Dashboard/Index
-  	@projects = Project.all
+  	@projects = Project.where(:user_id => session[:user_id])
 
     #Param for Position in Form
     @project_count = Project.count
@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
 
   def update
     #Param for Dashboard/Index
-    @projects = Project.all
+    @projects = Project.where(:user_id => session[:user_id])
 
     @project.update(project_params)
  

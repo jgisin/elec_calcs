@@ -1,0 +1,35 @@
+<%= form_for @meterbank, remote: true do |f| %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+  <div class="form-group">
+    <%= f.label :bus_name %><br>
+    <%= f.text_field :bus_name%>
+  </div>
+  <div class="form-group">
+    <%= f.label :unit_count %><br>
+    <%= f.text_field :unit_count%>
+  </div>
+  <div class = "form-group" >
+    <%= f.label :largest_unit %><br>
+    <%= f.select :largest_unit, @largest_unit, {}, {class: "form-control"} %>
+  </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+
+        <div class="form-group">
+          <%= f.hidden_field :project_id, :value => @meterbank.project_id %>
+          <%= f.button :Submit, name: "project_id", value: @meterbank.project_id, :class => 'btn btn-md btn-success'  %>       
+          <%= link_to "Cancel", {controller: 'meterbanks', action: 'index', project_id: @meterbank.project_id }, class: "btn btn-md btn-default", remote: true   %>
+          <%= link_to 'Destroy', @meterbank, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-md btn-danger" %>
+        </div>
+
+    </div>
+  </div>
+</div>
+<% end %>

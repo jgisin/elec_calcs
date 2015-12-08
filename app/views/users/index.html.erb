@@ -1,0 +1,28 @@
+		<div class="container">
+			<div class="row">	
+				<div class="col-sm-3">
+			</div>
+				<div class="col-sm-6"		
+					<div class="container">
+						<%= form_tag(:action => 'attempt_login', :class => "form-signin") do %>
+						<h2 class="form-signin-heading">Please Sign In</h2>
+							<%= label_tag 'Username' %>
+							<%= text_field_tag 'user_name', nil, class: "form-control" %>
+
+							<%= label_tag 'Password' %>
+							<%= password_field_tag 'password', nil, class: "form-control" %>	
+								<br>
+								<% if !flash[:notice].blank? %>
+								<div class="alert alert-danger fade in">
+								<%= flash[:notice] %>
+							</div>
+								<% end %>
+							<%= submit_tag "Log In", class: "btn btn-lg btn-primary btn-block" %>
+
+						<% end %>
+						<%= link_to("Register New User", :controller => 'users', :action => 'new') %>
+				</div>
+				<div class="col-sm-3">
+				</div>
+			</div>
+		</div>
