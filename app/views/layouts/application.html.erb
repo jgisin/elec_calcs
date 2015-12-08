@@ -20,14 +20,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <% if !session[:user_id].nil? %>
             <li><a href="/">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
-            <li><% if !session[:user_id].nil? %>
-                        <p class="navbar-text"><%= session[:user_name].upcase %> &nbsp;
+            <li> <p class="navbar-text"><%= session[:user_name].upcase %> &nbsp;
            <%= link_to "Logout", {controller: "users", action: "logout"} %>
                       <% else %>
-           <%= link_to "Login", {controller: "users", action: "index"} %>
-         <%end%></li>
+       <li> <%= link_to "Login", {controller: "users", action: "index"} %></li>
+         <%end%>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
