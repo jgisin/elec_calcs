@@ -18,6 +18,7 @@ class CreatePanels < ActiveRecord::Migration
       t.float :f_value
       t.float :m_value
       t.float :final_value
+      t.float :volt_drop
       #Foreign Key
       t.integer :project_id
 

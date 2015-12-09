@@ -145,3 +145,212 @@ LoadDemand.create(unit_count: 59, demand: 0.24)
 LoadDemand.create(unit_count: 60, demand: 0.24)
 LoadDemand.create(unit_count: 61, demand: 0.24)
 LoadDemand.create(unit_count: 62, demand: 0.23)
+
+#Volt Drop Copper
+
+Voltdrop.create(wire_size: "14", wire_type: 0, conduit: 0, phase: 0, power_factor: 4371)
+Voltdrop.create(wire_size: "14", wire_type: 0, conduit: 0, phase: 1, power_factor: 5047)
+Voltdrop.create(wire_size: "14", wire_type: 0, conduit: 1, phase: 0, power_factor: 4355)
+Voltdrop.create(wire_size: "14", wire_type: 0, conduit: 1, phase: 1, power_factor: 5029)
+
+Voltdrop.create(wire_size: "12", wire_type: 0, conduit: 0, phase: 0, power_factor: 2841)
+Voltdrop.create(wire_size: "12", wire_type: 0, conduit: 0, phase: 1, power_factor: 3281)
+Voltdrop.create(wire_size: "12", wire_type: 0, conduit: 1, phase: 0, power_factor: 2827)
+Voltdrop.create(wire_size: "12", wire_type: 0, conduit: 1, phase: 1, power_factor: 3264)
+
+Voltdrop.create(wire_size: "10", wire_type: 0, conduit: 0, phase: 0, power_factor: 1728)
+Voltdrop.create(wire_size: "10", wire_type: 0, conduit: 0, phase: 1, power_factor: 1995)
+Voltdrop.create(wire_size: "10", wire_type: 0, conduit: 1, phase: 0, power_factor: 1714)
+Voltdrop.create(wire_size: "10", wire_type: 0, conduit: 1, phase: 1, power_factor: 1980)
+
+Voltdrop.create(wire_size: "8", wire_type: 0, conduit: 0, phase: 0, power_factor: 1148)
+Voltdrop.create(wire_size: "8", wire_type: 0, conduit: 0, phase: 1, power_factor: 1326)
+Voltdrop.create(wire_size: "8", wire_type: 0, conduit: 1, phase: 0, power_factor: 1134)
+Voltdrop.create(wire_size: "8", wire_type: 0, conduit: 1, phase: 1, power_factor: 1310)
+
+Voltdrop.create(wire_size: "6", wire_type: 0, conduit: 0, phase: 0, power_factor: 745)
+Voltdrop.create(wire_size: "6", wire_type: 0, conduit: 0, phase: 1, power_factor: 860)
+Voltdrop.create(wire_size: "6", wire_type: 0, conduit: 1, phase: 0, power_factor: 731)
+Voltdrop.create(wire_size: "6", wire_type: 0, conduit: 1, phase: 1, power_factor: 845)
+
+Voltdrop.create(wire_size: "4", wire_type: 0, conduit: 0, phase: 0, power_factor: 491)
+Voltdrop.create(wire_size: "4", wire_type: 0, conduit: 0, phase: 1, power_factor: 568)
+Voltdrop.create(wire_size: "4", wire_type: 0, conduit: 1, phase: 0, power_factor: 479)
+Voltdrop.create(wire_size: "4", wire_type: 0, conduit: 1, phase: 1, power_factor: 553)
+
+Voltdrop.create(wire_size: "3", wire_type: 0, conduit: 0, phase: 0, power_factor: 407)
+Voltdrop.create(wire_size: "3", wire_type: 0, conduit: 0, phase: 1, power_factor: 470)
+Voltdrop.create(wire_size: "3", wire_type: 0, conduit: 1, phase: 0, power_factor: 395)
+Voltdrop.create(wire_size: "3", wire_type: 0, conduit: 1, phase: 1, power_factor: 456)
+
+Voltdrop.create(wire_size: "2", wire_type: 0, conduit: 0, phase: 0, power_factor: 336)
+Voltdrop.create(wire_size: "2", wire_type: 0, conduit: 0, phase: 1, power_factor: 388)
+Voltdrop.create(wire_size: "2", wire_type: 0, conduit: 1, phase: 0, power_factor: 310)
+Voltdrop.create(wire_size: "2", wire_type: 0, conduit: 1, phase: 1, power_factor: 358)
+
+Voltdrop.create(wire_size: "1", wire_type: 0, conduit: 0, phase: 0, power_factor: 280)
+Voltdrop.create(wire_size: "1", wire_type: 0, conduit: 0, phase: 1, power_factor: 324)
+Voltdrop.create(wire_size: "1", wire_type: 0, conduit: 1, phase: 0, power_factor: 255)
+Voltdrop.create(wire_size: "1", wire_type: 0, conduit: 1, phase: 1, power_factor: 295)
+
+Voltdrop.create(wire_size: "1/0", wire_type: 0, conduit: 0, phase: 0, power_factor: 223)
+Voltdrop.create(wire_size: "1/0", wire_type: 0, conduit: 0, phase: 1, power_factor: 258)
+Voltdrop.create(wire_size: "1/0", wire_type: 0, conduit: 1, phase: 0, power_factor: 212)
+Voltdrop.create(wire_size: "1/0", wire_type: 0, conduit: 1, phase: 1, power_factor: 244)
+
+Voltdrop.create(wire_size: "2/0", wire_type: 0, conduit: 0, phase: 0, power_factor: 194)
+Voltdrop.create(wire_size: "2/0", wire_type: 0, conduit: 0, phase: 1, power_factor: 224)
+Voltdrop.create(wire_size: "2/0", wire_type: 0, conduit: 1, phase: 0, power_factor: 183)
+Voltdrop.create(wire_size: "2/0", wire_type: 0, conduit: 1, phase: 1, power_factor: 211)
+
+Voltdrop.create(wire_size: "3/0", wire_type: 0, conduit: 0, phase: 0, power_factor: 163)
+Voltdrop.create(wire_size: "3/0", wire_type: 0, conduit: 0, phase: 1, power_factor: 188)
+Voltdrop.create(wire_size: "3/0", wire_type: 0, conduit: 1, phase: 0, power_factor: 150)
+Voltdrop.create(wire_size: "3/0", wire_type: 0, conduit: 1, phase: 1, power_factor: 173)
+
+Voltdrop.create(wire_size: "4/0", wire_type: 0, conduit: 0, phase: 0, power_factor: 140)
+Voltdrop.create(wire_size: "4/0", wire_type: 0, conduit: 0, phase: 1, power_factor: 162)
+Voltdrop.create(wire_size: "4/0", wire_type: 0, conduit: 1, phase: 0, power_factor: 128)
+Voltdrop.create(wire_size: "4/0", wire_type: 0, conduit: 1, phase: 1, power_factor: 148)
+
+Voltdrop.create(wire_size: "250", wire_type: 0, conduit: 0, phase: 0, power_factor: 128)
+Voltdrop.create(wire_size: "250", wire_type: 0, conduit: 0, phase: 1, power_factor: 148)
+Voltdrop.create(wire_size: "250", wire_type: 0, conduit: 1, phase: 0, power_factor: 114)
+Voltdrop.create(wire_size: "250", wire_type: 0, conduit: 1, phase: 1, power_factor: 132)
+
+Voltdrop.create(wire_size: "300", wire_type: 0, conduit: 0, phase: 0, power_factor: 115)
+Voltdrop.create(wire_size: "300", wire_type: 0, conduit: 0, phase: 1, power_factor: 133)
+Voltdrop.create(wire_size: "300", wire_type: 0, conduit: 1, phase: 0, power_factor: 103)
+Voltdrop.create(wire_size: "300", wire_type: 0, conduit: 1, phase: 1, power_factor: 119)
+
+Voltdrop.create(wire_size: "350", wire_type: 0, conduit: 0, phase: 0, power_factor: 106)
+Voltdrop.create(wire_size: "350", wire_type: 0, conduit: 0, phase: 1, power_factor: 122)
+Voltdrop.create(wire_size: "350", wire_type: 0, conduit: 1, phase: 0, power_factor: 94)
+Voltdrop.create(wire_size: "350", wire_type: 0, conduit: 1, phase: 1, power_factor: 108)
+
+Voltdrop.create(wire_size: "400", wire_type: 0, conduit: 0, phase: 0, power_factor: 99)
+Voltdrop.create(wire_size: "400", wire_type: 0, conduit: 0, phase: 1, power_factor: 114)
+Voltdrop.create(wire_size: "400", wire_type: 0, conduit: 1, phase: 0, power_factor: 87)
+Voltdrop.create(wire_size: "400", wire_type: 0, conduit: 1, phase: 1, power_factor: 100)
+
+Voltdrop.create(wire_size: "500", wire_type: 0, conduit: 0, phase: 0, power_factor: 90)
+Voltdrop.create(wire_size: "500", wire_type: 0, conduit: 0, phase: 1, power_factor: 104)
+Voltdrop.create(wire_size: "500", wire_type: 0, conduit: 1, phase: 0, power_factor: 77)
+Voltdrop.create(wire_size: "500", wire_type: 0, conduit: 1, phase: 1, power_factor: 90)
+
+Voltdrop.create(wire_size: "600", wire_type: 0, conduit: 0, phase: 0, power_factor: 84)
+Voltdrop.create(wire_size: "600", wire_type: 0, conduit: 0, phase: 1, power_factor: 97)
+Voltdrop.create(wire_size: "600", wire_type: 0, conduit: 1, phase: 0, power_factor: 72)
+Voltdrop.create(wire_size: "600", wire_type: 0, conduit: 1, phase: 1, power_factor: 83)
+
+Voltdrop.create(wire_size: "750", wire_type: 0, conduit: 0, phase: 0, power_factor: 78)
+Voltdrop.create(wire_size: "750", wire_type: 0, conduit: 0, phase: 1, power_factor: 91)
+Voltdrop.create(wire_size: "750", wire_type: 0, conduit: 1, phase: 0, power_factor: 65)
+Voltdrop.create(wire_size: "750", wire_type: 0, conduit: 1, phase: 1, power_factor: 76)
+
+Voltdrop.create(wire_size: "1,000", wire_type: 0, conduit: 0, phase: 0, power_factor: 72)
+Voltdrop.create(wire_size: "1,000", wire_type: 0, conduit: 0, phase: 1, power_factor: 84)
+Voltdrop.create(wire_size: "1,000", wire_type: 0, conduit: 1, phase: 0, power_factor: 59)
+Voltdrop.create(wire_size: "1,000", wire_type: 0, conduit: 1, phase: 1, power_factor: 68)
+
+#Volt Drop Aluminum
+
+Voltdrop.create(wire_size: "12", wire_type: 1, conduit: 0, phase: 0, power_factor: 4504)
+Voltdrop.create(wire_size: "12", wire_type: 1, conduit: 0, phase: 1, power_factor: 5201)
+Voltdrop.create(wire_size: "12", wire_type: 1, conduit: 1, phase: 0, power_factor: 4490)
+Voltdrop.create(wire_size: "12", wire_type: 1, conduit: 1, phase: 1, power_factor: 5184)
+
+Voltdrop.create(wire_size: "10", wire_type: 1, conduit: 0, phase: 0, power_factor: 2836)
+Voltdrop.create(wire_size: "10", wire_type: 1, conduit: 0, phase: 1, power_factor: 3275)
+Voltdrop.create(wire_size: "10", wire_type: 1, conduit: 1, phase: 0, power_factor: 2823)
+Voltdrop.create(wire_size: "10", wire_type: 1, conduit: 1, phase: 1, power_factor: 3260)
+
+Voltdrop.create(wire_size: "8", wire_type: 1, conduit: 0, phase: 0, power_factor: 1868)
+Voltdrop.create(wire_size: "8", wire_type: 1, conduit: 0, phase: 1, power_factor: 2158)
+Voltdrop.create(wire_size: "8", wire_type: 1, conduit: 1, phase: 0, power_factor: 1855)
+Voltdrop.create(wire_size: "8", wire_type: 1, conduit: 1, phase: 1, power_factor: 2142)
+
+Voltdrop.create(wire_size: "6", wire_type: 1, conduit: 0, phase: 0, power_factor: 1188)
+Voltdrop.create(wire_size: "6", wire_type: 1, conduit: 0, phase: 1, power_factor: 1372)
+Voltdrop.create(wire_size: "6", wire_type: 1, conduit: 1, phase: 0, power_factor: 1175)
+Voltdrop.create(wire_size: "6", wire_type: 1, conduit: 1, phase: 1, power_factor: 1357)
+
+Voltdrop.create(wire_size: "4", wire_type: 1, conduit: 0, phase: 0, power_factor: 769)
+Voltdrop.create(wire_size: "4", wire_type: 1, conduit: 0, phase: 1, power_factor: 888)
+Voltdrop.create(wire_size: "4", wire_type: 1, conduit: 1, phase: 0, power_factor: 756)
+Voltdrop.create(wire_size: "4", wire_type: 1, conduit: 1, phase: 1, power_factor: 873)
+
+Voltdrop.create(wire_size: "3", wire_type: 1, conduit: 0, phase: 0, power_factor: 615)
+Voltdrop.create(wire_size: "3", wire_type: 1, conduit: 0, phase: 1, power_factor: 710)
+Voltdrop.create(wire_size: "3", wire_type: 1, conduit: 1, phase: 0, power_factor: 603)
+Voltdrop.create(wire_size: "3", wire_type: 1, conduit: 1, phase: 1, power_factor: 696)
+
+Voltdrop.create(wire_size: "2", wire_type: 1, conduit: 0, phase: 0, power_factor: 502)
+Voltdrop.create(wire_size: "2", wire_type: 1, conduit: 0, phase: 1, power_factor: 580)
+Voltdrop.create(wire_size: "2", wire_type: 1, conduit: 1, phase: 0, power_factor: 490)
+Voltdrop.create(wire_size: "2", wire_type: 1, conduit: 1, phase: 1, power_factor: 566)
+
+Voltdrop.create(wire_size: "1", wire_type: 1, conduit: 0, phase: 0, power_factor: 405)
+Voltdrop.create(wire_size: "1", wire_type: 1, conduit: 0, phase: 1, power_factor: 468)
+Voltdrop.create(wire_size: "1", wire_type: 1, conduit: 1, phase: 0, power_factor: 394)
+Voltdrop.create(wire_size: "1", wire_type: 1, conduit: 1, phase: 1, power_factor: 455)
+
+Voltdrop.create(wire_size: "1/0", wire_type: 1, conduit: 0, phase: 0, power_factor: 334)
+Voltdrop.create(wire_size: "1/0", wire_type: 1, conduit: 0, phase: 1, power_factor: 386)
+Voltdrop.create(wire_size: "1/0", wire_type: 1, conduit: 1, phase: 0, power_factor: 322)
+Voltdrop.create(wire_size: "1/0", wire_type: 1, conduit: 1, phase: 1, power_factor: 372)
+
+Voltdrop.create(wire_size: "2/0", wire_type: 1, conduit: 0, phase: 0, power_factor: 277)
+Voltdrop.create(wire_size: "2/0", wire_type: 1, conduit: 0, phase: 1, power_factor: 320)
+Voltdrop.create(wire_size: "2/0", wire_type: 1, conduit: 1, phase: 0, power_factor: 266)
+Voltdrop.create(wire_size: "2/0", wire_type: 1, conduit: 1, phase: 1, power_factor: 307)
+
+Voltdrop.create(wire_size: "3/0", wire_type: 1, conduit: 0, phase: 0, power_factor: 234)
+Voltdrop.create(wire_size: "3/0", wire_type: 1, conduit: 0, phase: 1, power_factor: 270)
+Voltdrop.create(wire_size: "3/0", wire_type: 1, conduit: 1, phase: 0, power_factor: 223)
+Voltdrop.create(wire_size: "3/0", wire_type: 1, conduit: 1, phase: 1, power_factor: 258)
+
+Voltdrop.create(wire_size: "4/0", wire_type: 1, conduit: 0, phase: 0, power_factor: 191)
+Voltdrop.create(wire_size: "4/0", wire_type: 1, conduit: 0, phase: 1, power_factor: 221)
+Voltdrop.create(wire_size: "4/0", wire_type: 1, conduit: 1, phase: 0, power_factor: 181)
+Voltdrop.create(wire_size: "4/0", wire_type: 1, conduit: 1, phase: 1, power_factor: 209)
+
+Voltdrop.create(wire_size: "250", wire_type: 1, conduit: 0, phase: 0, power_factor: 173)
+Voltdrop.create(wire_size: "250", wire_type: 1, conduit: 0, phase: 1, power_factor: 200)
+Voltdrop.create(wire_size: "250", wire_type: 1, conduit: 1, phase: 0, power_factor: 160)
+Voltdrop.create(wire_size: "250", wire_type: 1, conduit: 1, phase: 1, power_factor: 185)
+
+Voltdrop.create(wire_size: "300", wire_type: 1, conduit: 0, phase: 0, power_factor: 152)
+Voltdrop.create(wire_size: "300", wire_type: 1, conduit: 0, phase: 1, power_factor: 176)
+Voltdrop.create(wire_size: "300", wire_type: 1, conduit: 1, phase: 0, power_factor: 140)
+Voltdrop.create(wire_size: "300", wire_type: 1, conduit: 1, phase: 1, power_factor: 162)
+
+Voltdrop.create(wire_size: "350", wire_type: 1, conduit: 0, phase: 0, power_factor: 139)
+Voltdrop.create(wire_size: "350", wire_type: 1, conduit: 0, phase: 1, power_factor: 160)
+Voltdrop.create(wire_size: "350", wire_type: 1, conduit: 1, phase: 0, power_factor: 125)
+Voltdrop.create(wire_size: "350", wire_type: 1, conduit: 1, phase: 1, power_factor: 145)
+
+Voltdrop.create(wire_size: "400", wire_type: 1, conduit: 0, phase: 0, power_factor: 127)
+Voltdrop.create(wire_size: "400", wire_type: 1, conduit: 0, phase: 1, power_factor: 146)
+Voltdrop.create(wire_size: "400", wire_type: 1, conduit: 1, phase: 0, power_factor: 116)
+Voltdrop.create(wire_size: "400", wire_type: 1, conduit: 1, phase: 1, power_factor: 134)
+
+Voltdrop.create(wire_size: "500", wire_type: 1, conduit: 0, phase: 0, power_factor: 112)
+Voltdrop.create(wire_size: "500", wire_type: 1, conduit: 0, phase: 1, power_factor: 129)
+Voltdrop.create(wire_size: "500", wire_type: 1, conduit: 1, phase: 0, power_factor: 100)
+Voltdrop.create(wire_size: "500", wire_type: 1, conduit: 1, phase: 1, power_factor: 115)
+
+Voltdrop.create(wire_size: "600", wire_type: 1, conduit: 0, phase: 0, power_factor: 102)
+Voltdrop.create(wire_size: "600", wire_type: 1, conduit: 0, phase: 1, power_factor: 118)
+Voltdrop.create(wire_size: "600", wire_type: 1, conduit: 1, phase: 0, power_factor: 90)
+Voltdrop.create(wire_size: "600", wire_type: 1, conduit: 1, phase: 1, power_factor: 104)
+
+Voltdrop.create(wire_size: "750", wire_type: 1, conduit: 0, phase: 0, power_factor: 92)
+Voltdrop.create(wire_size: "750", wire_type: 1, conduit: 0, phase: 1, power_factor: 107)
+Voltdrop.create(wire_size: "750", wire_type: 1, conduit: 1, phase: 0, power_factor: 79)
+Voltdrop.create(wire_size: "750", wire_type: 1, conduit: 1, phase: 1, power_factor: 92)
+
+Voltdrop.create(wire_size: "1,000", wire_type: 1, conduit: 0, phase: 0, power_factor: 82)
+Voltdrop.create(wire_size: "1,000", wire_type: 1, conduit: 0, phase: 1, power_factor: 95)
+Voltdrop.create(wire_size: "1,000", wire_type: 1, conduit: 1, phase: 0, power_factor: 70)
+Voltdrop.create(wire_size: "1,000", wire_type: 1, conduit: 1, phase: 1, power_factor: 81)
