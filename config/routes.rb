@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match '/users/logout', :to => 'users#logout', :via => [:get, :post]
   get '/logout' => 'session#destroy'
   match '/panels/fault', :to => 'panels#fault', :via => [:get, :post]
+  match '/panels/voltdrop', :to => 'panels#voltdrop', :via => [:get, :post]
   match '/units/appliance', :to => 'units#appliance', :via => [:get, :post]
   match '/units/hvac', :to => 'units#hvac', :via => [:get, :post]
   match '/units/load', :to => 'units#load', :via => [:get, :post]

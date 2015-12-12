@@ -28,7 +28,11 @@ def create
 end
 	
 def fault
-@panels = Panel.where(:project_id => @project.id)
+  @panels = Panel.where(:project_id => @project.id)
+end
+
+def voltdrop
+  @panels = Panel.where(:project_id => @project.id)
 end
 
   def edit
@@ -62,7 +66,7 @@ end
   end
 
     def panel_params
-      params.require(:panel).permit(:wire_length, :init_fault, :runs, :voltage, :c_value, :panel_name,
+      params.require(:panel).permit(:conn_ampacity, :temp, :wire_length, :init_fault, :runs, :voltage, :c_value, :panel_name,
         :f_value, :m_value, :final_value, :project_id, :position, :wire_type, :conduit_type, :run_type,
         :wire_size, :fed_from)
     end

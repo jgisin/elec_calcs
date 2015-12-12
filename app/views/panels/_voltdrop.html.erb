@@ -18,7 +18,7 @@
             <td><%= panel.panel_name %></td>
             <td><%= panel.wire_length %></td>
             <td><%= "##{panel.wire_size} #{panel.wire_type == 0 ? "CU" : "AL"}" %></td>
-            <td><%= number_with_precision(panel.voltdrop, precision: 2) %></td>
+            <td><%= "#{number_with_precision(panel.voltdrop, precision: 2)}%" %></td>
           </tr>
           <% end %>
         </tbody>

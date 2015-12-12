@@ -13,6 +13,8 @@ class CreatePanels < ActiveRecord::Migration
       t.integer :wire_type
       t.integer :conduit_type
       t.integer :run_type
+      t.integer :temp
+      t.integer :conn_ampacity
       #Result Variables
       t.float :c_value
       t.float :f_value

@@ -1,7 +1,7 @@
 class Panel < ActiveRecord::Base
 
 
-before_save :set_fault, :set_c_val, :calc_final
+before_save :set_fault, :set_c_val, :calc_final, :voltdrop
 belongs_to :project
 #acts_as_list :scope => :project
 
@@ -19,7 +19,7 @@ validates_presence_of :run_type
 
 def set_fault
 	if self.fed_from == "Transformer"
-		self.init_fault = Project.find_by_id(self.project_id).init_fault
+		self.init_fault = Project.find(self.project_id).init_fault
 	else
 		self.init_fault = Panel.where(panel_name: self.fed_from).first.final_value
 	end
@@ -40,6 +40,18 @@ def calc_final
       (self.runs * self.c_value * self.voltage)
       self.m_value = 1/(1+self.f_value)
       self.final_value = self.init_fault * self.m_value
+end
+
+def voltdrop
+	if self.voltage != 240
+		phase = 1
+	else
+		phase = 0
+	end
+	self.volt_drop = (((1/self.runs) * ((self.wire_length *
+	 self.conn_ampacity) *
+	 Voltdrop.where(wire_size: self.wire_size, wire_type: self.wire_type - 1, phase: phase,
+	 conduit: self.conduit_type - 1).first.power_factor)) / 10000) / self.voltage
 end
 
 
